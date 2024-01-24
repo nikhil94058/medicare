@@ -1,6 +1,8 @@
 import React from 'react'
-
+import { useAuth0 } from "@auth0/auth0-react";
+import { Login } from './Login';
 export const Navbar = () => {
+
   return (
     <div className='flex flex-row items-center justify-between bg-[#9BE8D8] p-4'>
       <div className='flex items-center'>
@@ -18,6 +20,7 @@ export const Navbar = () => {
         <img src="" alt="" className="ml-4" />
         <div className="text-black text-xs font-normal font-['Inter'] ml-2">Rohit Shetty</div>
       </div>
+      <Login />
     </div>
 
   )
