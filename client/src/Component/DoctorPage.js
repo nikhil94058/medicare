@@ -6,11 +6,60 @@ export const DoctorPage = () => {
   return (
     <div>
       <div><Navbar /></div>
-      <Sidebar />
+      <div className='flex'>
+
+        <div><ProfileCard />
+          <Sidebar /></div>
+        <div><Main1 /></div>
+      </div>
     </div>
   )
 }
 
+
+
+
+export const ProfileCard = () => {
+  let name = "Dr. Kiran Patel";
+  return (
+    <>
+      <aside
+        className="jusify-items-center"
+        aria-label="Sidebar">
+        <div className='z-40 w-64 bg-[#F8FDCF] justify-center'>
+          <div><img className="w-[70px] h-[70px] rounded-[14px] shadow " src="https://via.placeholder.com/70x70" /></div>
+          <div className="w-[99.75px] h-5 text-center text-black text-sm font-semibold font-['Poppins'] leading-normal">{name}</div>
+        </div>
+      </aside>
+    </>
+
+  )
+}
+
+export const Main1 = () => {
+  let PName = "Ram lal";
+  let PKey = "0x5847fect6890";
+
+  return (
+    <div className='flex space-x-6'>
+      <div>
+        <input type="text" placeholder='Enter the Patient id' />
+        <button>Enter</button>
+        <br />
+        <div>Name: {PName}</div>
+        <br />
+        <div>Patient key : {PKey}</div>
+        <br />
+        <p>Patient Situatuion</p>
+        <input type="color" name="" id="" />
+        <br />
+        <br />
+        <input type="file" name="" id="" />
+      </div>
+      <img src="" alt="" className='h-8 w-10' />
+    </div>
+  )
+}
 
 export const Sidebar = () => {
   return (
@@ -40,7 +89,7 @@ export const Sidebar = () => {
       </button>
       <aside
         id="sidebar-multi-level-sidebar"
-        className="fixed top-19 left-0 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0"
+        className=" z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0"
         aria-label="Sidebar"
       >
         <div className="h-full px-3 py-4 overflow-y-auto  bg-[#F8FDCF]">

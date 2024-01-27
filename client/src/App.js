@@ -10,12 +10,12 @@ import { DoctorPage } from './Component/DoctorPage';
 function App() {
   return (
     <div className="w-[1728px] h-[3737px] relative bg-sky-500 items-center">
-      {/*<p> Ayurmed</p>
+      <p> Ayurmed</p>
       <Navbar />
       <Hero />
       <Ask />
-      <Testimonials />*/}
-      <DoctorPage />
+      <Testimonials />
+
     </div>
   );
 }
