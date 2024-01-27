@@ -1,14 +1,18 @@
 import React from 'react'
 import { Navbar } from './Navbar'
 export const DoctorPage = () => {
-
+  const profile = {
+    name: "Dr. Kiran Patel",
+    email: "kiran@example.com",
+    imageUrl: "https://via.placeholder.com/70x70",
+  };
 
   return (
     <div>
       <div><Navbar /></div>
       <div className='flex'>
 
-        <div><ProfileCard />
+        <div>  <ProfileCard {...profile} />
           <Sidebar /></div>
         <div><Main1 /></div>
       </div>
@@ -19,47 +23,100 @@ export const DoctorPage = () => {
 
 
 
-export const ProfileCard = () => {
-  let name = "Dr. Kiran Patel";
+
+const ProfileCard = ({ name, email, imageUrl }) => {
   return (
-    <>
-      <aside
-        className="jusify-items-center"
-        aria-label="Sidebar">
-        <div className='z-40 w-64 bg-[#F8FDCF] justify-center'>
-          <div><img className="w-[70px] h-[70px] rounded-[14px] shadow " src="https://via.placeholder.com/70x70" /></div>
-          <div className="w-[99.75px] h-5 text-center text-black text-sm font-semibold font-['Poppins'] leading-normal">{name}</div>
-        </div>
-      </aside>
-    </>
+    <aside className="flex items-center justify-center p-4 bg-[#F8FDCF] w-64">
+      <div className="flex flex-col items-center">
+        <img className="w-20 h-20 rounded-full shadow" src={imageUrl} alt="Profile" />
+        <div className="mt-2 text-center text-black text-sm font-semibold font-Poppins leading-normal">{name}</div>
+        <div className="mt-1 text-gray-600 text-xs">{email}</div>
+      </div>
+    </aside>
+  );
+};
 
-  )
-}
+export default ProfileCard;
 
-export const Main1 = () => {
-  let PName = "Ram lal";
+
+
+
+const Main1 = () => {
+  let PName = "Ram Lal";
   let PKey = "0x5847fect6890";
 
   return (
-    <div className='flex space-x-6'>
-      <div>
-        <input type="text" placeholder='Enter the Patient id' />
-        <button>Enter</button>
-        <br />
-        <div>Name: {PName}</div>
-        <br />
-        <div>Patient key : {PKey}</div>
-        <br />
-        <p>Patient Situatuion</p>
-        <input type="color" name="" id="" />
-        <br />
-        <br />
-        <input type="file" name="" id="" />
+    <div className="flex space-x-6 p-8">
+      <div className="flex flex-col">
+        <center>
+          <input
+            type="text"
+            placeholder="Enter the Patient ID"
+            className="w-[728px] h-[74px] bg-lime-100 rounded-[47px] shadow p-4"
+          />
+        </center>
+        <center>
+          <button className="mt-4 p-2 bg-blue-500 text-white rounded w-20">Enter</button>
+        </center>
+
+        <div className="mt-6">
+          <p className="text-lg font-semibold">Name:</p>
+          <p>{PName}</p>
+        </div>
+        <div className="mt-4">
+          <p className="text-lg font-semibold">Patient Key:</p>
+          <p>{PKey}</p>
+        </div>
+        <div className="mt-6">
+          <p className="text-lg font-semibold">Patient Situation:</p>
+          <div className="flex space-y-4">
+            <div>
+              <h4>Heart Rate :</h4>
+              <input type="color" className="mt-2" />
+            </div>
+            <br />
+            <div>
+              <h4>Blood Pressure : </h4>
+              <input type="color" className="mt-2" />
+            </div>
+            <br />
+            <div>
+              <h4>Fever :</h4>
+              <input type="color" className="mt-2" />
+            </div>
+            <br />
+          </div>
+        </div>
+        <div className="mt-6">
+          <div className="grid grid-cols-2 gap-4">
+            <div>
+              <p className="text-lg font-semibold">Patient Details:</p>
+              <div className="text-white text-5xl font-normal font-lato capitalize">
+                <p>pATIENT NAME : Ram Lal</p>
+                <p>AGE : 30</p>
+                <p>SEX : Male</p>
+                <p>ANY HERIDITY BASED PROBLEM: No</p>
+                <p>IS THE PATIENT HAVING ANY DISORDER: No</p>
+                <p>DISORDER/DISEASE NAME(IF ANY): -</p>
+                <p>DISABLED PERSON: No</p>
+                <p>SPECIFY THE DISABILITY(IF ANY): -</p>
+                <p>ANY OTHER DETAILS: -</p>
+              </div>
+            </div>
+            <div className="mt-4">
+              <label className="text-lg font-semibold">Upload File:</label>
+              <input type="file" className="mt-2" />
+            </div>
+          </div>
+        </div>
       </div>
-      <img src="" alt="" className='h-8 w-10' />
+      <img src="" alt="" className="h-8 w-10" />
     </div>
-  )
-}
+  );
+};
+
+
+
 
 export const Sidebar = () => {
   return (
@@ -293,263 +350,7 @@ export const Sidebar = () => {
           </ul>
         </div>
       </aside>
-      <div className="p-4 sm:ml-64">
-        <div className="p-4 border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700">
-          <div className="grid grid-cols-3 gap-4 mb-4">
-            <div className="flex items-center justify-center h-24 rounded bg-gray-50 dark:bg-gray-800">
-              <p className="text-2xl text-gray-400 dark:text-gray-500">
-                <svg
-                  className="w-3.5 h-3.5"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 18 18"
-                >
-                  <path
-                    stroke="currentColor"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M9 1v16M1 9h16"
-                  />
-                </svg>
-              </p>
-            </div>
-            <div className="flex items-center justify-center h-24 rounded bg-gray-50 dark:bg-gray-800">
-              <p className="text-2xl text-gray-400 dark:text-gray-500">
-                <svg
-                  className="w-3.5 h-3.5"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 18 18"
-                >
-                  <path
-                    stroke="currentColor"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M9 1v16M1 9h16"
-                  />
-                </svg>
-              </p>
-            </div>
-            <div className="flex items-center justify-center h-24 rounded bg-gray-50 dark:bg-gray-800">
-              <p className="text-2xl text-gray-400 dark:text-gray-500">
-                <svg
-                  className="w-3.5 h-3.5"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 18 18"
-                >
-                  <path
-                    stroke="currentColor"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M9 1v16M1 9h16"
-                  />
-                </svg>
-              </p>
-            </div>
-          </div>
-          <div className="flex items-center justify-center h-48 mb-4 rounded bg-gray-50 dark:bg-gray-800">
-            <p className="text-2xl text-gray-400 dark:text-gray-500">
-              <svg
-                className="w-3.5 h-3.5"
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 18 18"
-              >
-                <path
-                  stroke="currentColor"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M9 1v16M1 9h16"
-                />
-              </svg>
-            </p>
-          </div>
-          <div className="grid grid-cols-2 gap-4 mb-4">
-            <div className="flex items-center justify-center rounded bg-gray-50 h-28 dark:bg-gray-800">
-              <p className="text-2xl text-gray-400 dark:text-gray-500">
-                <svg
-                  className="w-3.5 h-3.5"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 18 18"
-                >
-                  <path
-                    stroke="currentColor"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M9 1v16M1 9h16"
-                  />
-                </svg>
-              </p>
-            </div>
-            <div className="flex items-center justify-center rounded bg-gray-50 h-28 dark:bg-gray-800">
-              <p className="text-2xl text-gray-400 dark:text-gray-500">
-                <svg
-                  className="w-3.5 h-3.5"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 18 18"
-                >
-                  <path
-                    stroke="currentColor"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M9 1v16M1 9h16"
-                  />
-                </svg>
-              </p>
-            </div>
-            <div className="flex items-center justify-center rounded bg-gray-50 h-28 dark:bg-gray-800">
-              <p className="text-2xl text-gray-400 dark:text-gray-500">
-                <svg
-                  className="w-3.5 h-3.5"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 18 18"
-                >
-                  <path
-                    stroke="currentColor"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M9 1v16M1 9h16"
-                  />
-                </svg>
-              </p>
-            </div>
-            <div className="flex items-center justify-center rounded bg-gray-50 h-28 dark:bg-gray-800">
-              <p className="text-2xl text-gray-400 dark:text-gray-500">
-                <svg
-                  className="w-3.5 h-3.5"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 18 18"
-                >
-                  <path
-                    stroke="currentColor"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M9 1v16M1 9h16"
-                  />
-                </svg>
-              </p>
-            </div>
-          </div>
-          <div className="flex items-center justify-center h-48 mb-4 rounded bg-gray-50 dark:bg-gray-800">
-            <p className="text-2xl text-gray-400 dark:text-gray-500">
-              <svg
-                className="w-3.5 h-3.5"
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 18 18"
-              >
-                <path
-                  stroke="currentColor"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M9 1v16M1 9h16"
-                />
-              </svg>
-            </p>
-          </div>
-          <div className="grid grid-cols-2 gap-4">
-            <div className="flex items-center justify-center rounded bg-gray-50 h-28 dark:bg-gray-800">
-              <p className="text-2xl text-gray-400 dark:text-gray-500">
-                <svg
-                  className="w-3.5 h-3.5"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 18 18"
-                >
-                  <path
-                    stroke="currentColor"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M9 1v16M1 9h16"
-                  />
-                </svg>
-              </p>
-            </div>
-            <div className="flex items-center justify-center rounded bg-gray-50 h-28 dark:bg-gray-800">
-              <p className="text-2xl text-gray-400 dark:text-gray-500">
-                <svg
-                  className="w-3.5 h-3.5"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 18 18"
-                >
-                  <path
-                    stroke="currentColor"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M9 1v16M1 9h16"
-                  />
-                </svg>
-              </p>
-            </div>
-            <div className="flex items-center justify-center rounded bg-gray-50 h-28 dark:bg-gray-800">
-              <p className="text-2xl text-gray-400 dark:text-gray-500">
-                <svg
-                  className="w-3.5 h-3.5"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 18 18"
-                >
-                  <path
-                    stroke="currentColor"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M9 1v16M1 9h16"
-                  />
-                </svg>
-              </p>
-            </div>
-            <div className="flex items-center justify-center rounded bg-gray-50 h-28 dark:bg-gray-800">
-              <p className="text-2xl text-gray-400 dark:text-gray-500">
-                <svg
-                  className="w-3.5 h-3.5"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 18 18"
-                >
-                  <path
-                    stroke="currentColor"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M9 1v16M1 9h16"
-                  />
-                </svg>
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
+
 
 
     </div>
