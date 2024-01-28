@@ -230,6 +230,8 @@ export const ContentCard = () => {
       <div><ContentCard1 data={exampleData} /></div>
       <br />
       <br />
+      <div className="w-[759px] h-[145px] text-white text-[40px] font-bold font-['Roboto']">SEE Previous Prescription :<br /></div>
+      <br />
       <div><Report data={hospitalData} /></div>
     </div>
   )

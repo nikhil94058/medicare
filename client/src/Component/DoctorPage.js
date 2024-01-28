@@ -16,7 +16,9 @@ export const DoctorPage = () => {
 
         <div>  <ProfileCard {...profile} />
           <Sidebar /></div>
-        <div><Main1 /></div>
+        <div><Main1 />
+          <Main2 /></div>
+
       </div>
     </div>
   )
@@ -71,23 +73,7 @@ const Main1 = () => {
         </div>
         <div className="mt-6">
           <p className="text-lg font-semibold">Patient Situation:</p>
-          <div className="flex space-y-4">
-            <div>
-              <h4>Heart Rate :</h4>
-              <input type="color" className="mt-2" />
-            </div>
-            <br />
-            <div>
-              <h4>Blood Pressure : </h4>
-              <input type="color" className="mt-2" />
-            </div>
-            <br />
-            <div>
-              <h4>Fever :</h4>
-              <input type="color" className="mt-2" />
-            </div>
-            <br />
-          </div>
+
         </div>
         <div className="mt-6">
           <div className="grid grid-cols-2 gap-4">
@@ -109,7 +95,7 @@ const Main1 = () => {
               <div>
                 <ContentCard />
               </div>
-              <div>Report Card</div>
+
             </div>
 
             <div className="mt-4">
@@ -127,6 +113,65 @@ const Main1 = () => {
 };
 
 
+
+export const Main2 = () => {
+  return (
+    <div>
+      <div className="w-[759px] h-[145px] text-white text-[40px] font-bold font-['Roboto']">SEE Symptoms Reported By the Patient:<br /><br /></div>
+      <br />
+      <a href="/">
+        <div className="w-[810px] h-[118px] ml-[500px] bg-zinc-300 rounded-[50px] hover:bg-zinc-600" >
+          <div className="w-[723px] h-[78px] m-5 p-7 text-center text-black text-5xl font-normal font-['Rhodium Libre'] ">VIEW SYMPTOMS</div>
+        </div>
+      </a>
+      <br />
+      <br />
+      <br />
+      <div className="w-[759px] h-[71px] text-white text-[40px] font-bold font-['Roboto']">Diet Recommendations from your end:</div>
+      <Box name="AILMENT DIAGNOSED" pname="ENTER THE AILMENT DIAGNOSED" />
+      <Box name="MEDICINES ADVISED" pname="ENTER THE MEDICINES WITH THEIR DOSAGE" />
+      <Box name="PRECAUTIONS NEEDED" pname="ENTER THE PRECAUTIONS NEEDED TO BE TAKEN" />
+      <div className='flex space-x-[70px] m-[50px]'>
+        <div className="w-[628px] h-[75px] bg-[#9BE8D8] rounded-[25px] hover:bg-[#297F6D] border-[##9be8d8]" >
+          <div className="w-[592px] h-[42px] ml-[24px] mt-[20px] text-black text-[40px] font-bold font-['Roboto']">NEXT APPOINTMENT DATE </div>
+        </div >
+        <input type="date" name="" className='w-[628px] h-[66px] bg-zinc-300 border-4 border-black' id="" />
+      </div>
+      <Box name="LAB TESTS RECOMMENDED" pname="ENTER THE LAB TEST REQUIRED(IF ANY)" />
+
+      <button className="w-[813px] h-[118px] ml-[500px] bg-zinc-300 rounded-[50px]" >
+        <div className="w-[723px] h-[78px] text-center text-black text-5xl font-normal font-['Rhodium Libre'] m-[35px]">SUBMIT PRESCRIPTION</div>
+      </button>
+      <br />
+      <br />
+      <div className="w-[759px] h-[71px] text-white text-[40px] font-bold font-['Roboto']">Diet Recommendations from your end:</div>
+      <Box name="Morning" pname="ENTER THE DIET SUITABLE" />
+      <Box name="Morning" pname="ENTER THE DIET SUITABLE" />
+      <Box name="Morning" pname="ENTER THE DIET SUITABLE" />
+      <Box name="Morning" pname="ENTER THE DIET SUITABLE" />
+      <button className="w-[813px] h-[118px] ml-[500px] bg-zinc-300 rounded-[50px]" >
+        <div className="w-[723px] h-[78px] text-center text-black text-5xl font-normal font-['Rhodium Libre'] m-[35px]">SUBMIT PRESCRIPTION</div>
+      </button>
+      <br />
+      <br />
+      <br />
+    </div >
+  )
+}
+
+
+
+export const Box = ({ name, pname }) => {
+  return (
+
+    <div className='flex space-x-[70px] m-[50px]'>
+      <div className="w-[628px] h-[75px] bg-[#9BE8D8] rounded-[25px] hover:bg-[#297F6D] border-[##9be8d8]" >
+        <div className="w-[592px] h-[42px] ml-[24px] mt-[20px] text-black text-[40px] font-bold font-['Roboto']">{name} </div>
+      </div >
+      <input type="text" className="w-[628px] h-[75px] bg-zinc-300 border-4 border-black" placeholder={pname} />
+    </div>
+  )
+}
 
 
 export const Sidebar = () => {
