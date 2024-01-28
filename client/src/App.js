@@ -12,14 +12,14 @@ function App() {
   return (
     <div className="w-[1728px] h-[3737px] relative bg-sky-500 items-center">
       <p> Ayurmed</p>
-      {/*<Navbar />
+      <Navbar />
       <Hero />
       <Ask />
       <Testimonials />
       <footer>
         <Footer />
-      </footer>*/}
-      <DoctorPage />
+      </footer>
+      {/*<DoctorPage />*/}
     </div>
   );
 }

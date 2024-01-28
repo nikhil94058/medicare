@@ -109,6 +109,7 @@ const Main1 = () => {
               <div>
                 <ContentCard />
               </div>
+              <div>Report Card</div>
             </div>
 
             <div className="mt-4">
