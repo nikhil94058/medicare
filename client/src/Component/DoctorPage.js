@@ -1,6 +1,7 @@
 import React from 'react'
 import { Navbar } from './Navbar'
 import Chart from './Chart';
+import ContentCard, { ContentCard1 } from './ContentCard';
 export const DoctorPage = () => {
   const profile = {
     name: "Dr. Kiran Patel",
@@ -103,7 +104,13 @@ const Main1 = () => {
                 <p>SPECIFY THE DISABILITY(IF ANY): -</p>
                 <p>ANY OTHER DETAILS: -</p>
               </div>
+              <br />
+              <br />
+              <div>
+                <ContentCard />
+              </div>
             </div>
+
             <div className="mt-4">
               <label className="text-lg font-semibold">Upload File:</label>
               <input type="file" className="mt-2" />
@@ -112,6 +119,8 @@ const Main1 = () => {
         </div>
       </div>
       <img src="" alt="" className="h-8 w-10" />
+
+
     </div>
   );
 };
