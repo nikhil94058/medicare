@@ -1,5 +1,6 @@
 import React from 'react'
 import { Navbar } from './Navbar'
+import Chart from './Chart';
 export const DoctorPage = () => {
   const profile = {
     name: "Dr. Kiran Patel",
@@ -58,7 +59,7 @@ const Main1 = () => {
         <center>
           <button className="mt-4 p-2 bg-blue-500 text-white rounded w-20">Enter</button>
         </center>
-
+        <Chart />
         <div className="mt-6">
           <p className="text-lg font-semibold">Name:</p>
           <p>{PName}</p>

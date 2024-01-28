@@ -11,8 +11,8 @@ import { Footer } from './Component/Footer';
 function App() {
   return (
     <div className="w-[1728px] h-[3737px] relative bg-sky-500 items-center">
-      {/*<p> Ayurmed</p>
-      <Navbar />
+      <p> Ayurmed</p>
+      {/*<Navbar />
       <Hero />
       <Ask />
       <Testimonials />
