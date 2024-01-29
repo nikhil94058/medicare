@@ -60,10 +60,10 @@ const Display = ({ contract, account, provider }) => {
       <div className="image-list">{data}</div>*/}
 
       <center>
-        <div className="w-[942px] h-[1094px] bg-white rounded-[46px] flex-col justify-start items-start gap-2.5 inline-flex">
+        <div className="w-[942px] h-[1094px] bg-[#E2F6CA] rounded-[46px] flex-col justify-start items-start gap-2.5 inline-flex">
           <center> <div className="w-[715px] h-[94px] justify-start items-center gap-[30px] inline-flex m-[90px]">
             <div className="w-[94px] h-[94px] relative">
-              <div className="w-[94px] h-[94px] left-0 top-0 absolute bg-white rounded-full border-2 border-slate-300" />
+              <img src="./pics/logo.svg" className="w-[94px] h-[94px] left-0 top-0 absolute bg-[#F8FDCF] rounded-full border-2 border-slate-300" />
               <div className="w-[46px] h-[46px] left-[24px] top-[24px] absolute flex-col justify-start items-start inline-flex">
                 <div className="w-[46px] h-[46px] relative">
                 </div>

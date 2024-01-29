@@ -46,7 +46,7 @@ const FileUpload = ({ contract, account, provider }) => {
     e.preventDefault();
   };
   return (
-    <div className="w-[854px] h-[428px] m-[40px] bg-white rounded-[26px] border-4 border-slate-300 flex items-center  justify-center  gap-2.5">
+    <div className="w-[854px] h-[428px] m-[40px] bg-[#F8FDCF] rounded-[26px] border-4 border-slate-300 flex items-center  justify-center  gap-2.5">
       <form className="flex flex-col items-center justify-center  w-full h-full border-2" onSubmit={handleSubmit} >
         <div className="flex flex-col items-center justify-center pt-5 pb-6">
           <svg class="w-8 h-8 mb-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 16">
