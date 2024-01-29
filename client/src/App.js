@@ -8,6 +8,7 @@ import { DoctorPage } from './Component/DoctorPage';
 import { Footer } from './Component/Footer';
 import File from './File';
 import { Routes, Route } from 'react-router-dom';
+import { About } from './Component/About';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
         <Routes>
           <Route path="/commit" element={<File />} />
           <Route path="/" element={<DoctorPage />} />
+          <Route path="/about" element={<About />} />
         </Routes>
       </div>
     </div>
