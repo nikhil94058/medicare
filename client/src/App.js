@@ -9,6 +9,7 @@ import { Footer } from './Component/Footer';
 import File from './File';
 import { Routes, Route } from 'react-router-dom';
 import { About } from './Component/About';
+import { Clock } from './Component/Clock';
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
           <Route path="/commit" element={<File />} />
           <Route path="/" element={<DoctorPage />} />
           <Route path="/about" element={<About />} />
+          <Route path="/clock" element={<Clock />} />
         </Routes>
       </div>
     </div>
