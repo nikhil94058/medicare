@@ -2,6 +2,10 @@ import React from 'react'
 import { Navbar } from './Navbar'
 import Chart from './Chart';
 import ContentCard, { ContentCard1 } from './ContentCard';
+import { useAuth0 } from "@auth0/auth0-react";
+import FileUpload from './FileUpload';
+
+
 export const DoctorPage = () => {
   const profile = {
     name: "Dr. Kiran Patel",
@@ -25,16 +29,35 @@ export const DoctorPage = () => {
 }
 
 
-
-
-
+// we have to fix this properly
 const ProfileCard = ({ name, email, imageUrl }) => {
+  const { user, isAuthenticated, isLoading } = useAuth0();
   return (
     <aside className="flex items-center justify-center p-4 bg-[#F8FDCF] w-64">
       <div className="flex flex-col items-center">
-        <img className="w-20 h-20 rounded-full shadow" src={imageUrl} alt="Profile" />
-        <div className="mt-2 text-center text-black text-sm font-semibold font-Poppins leading-normal">{name}</div>
-        <div className="mt-1 text-gray-600 text-xs">{email}</div>
+        <div>
+          {!isAuthenticated ? (
+            <div>
+              <img className="w-20 h-20 rounded-full shadow" src={imageUrl} alt="Profile" />
+            </div>) :
+            (<img className="w-20 h-20 rounded-full shadow" src={user.picture} alt="Profile" />)}
+
+
+
+
+        </div>
+        {!isAuthenticated ? (
+          <div>
+            <div className="mt-2 text-center text-black text-sm font-semibold font-Poppins leading-normal">{name}</div>
+          </div>) :
+          (<div className="mt-2 text-center text-black text-sm font-semibold font-Poppins leading-normal">{user.name}</div>)}
+      </div>
+      <div>
+        {!isAuthenticated ? (
+          <div>
+            <div className="mt-1 text-gray-600 text-xs">{email}</div>
+          </div>) :
+          (<div className="mt-1 text-gray-600 text-xs">{user.gender}</div>)}
       </div>
     </aside>
   );
@@ -100,7 +123,7 @@ const Main1 = () => {
 
             <div className="mt-4">
               <label className="text-lg font-semibold">Upload File:</label>
-              <input type="file" className="mt-2" />
+              <FileUpload />
             </div>
           </div>
         </div>

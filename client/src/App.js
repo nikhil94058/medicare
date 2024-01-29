@@ -6,7 +6,8 @@ import Ask from './Component/Ask';
 import { Testimonials } from './Component/Testimonials';
 import { DoctorPage } from './Component/DoctorPage';
 import { Footer } from './Component/Footer';
-
+import File from './File';
+import { Routes, Route } from 'react-router-dom';
 
 function App() {
   return (
@@ -19,7 +20,12 @@ function App() {
       <footer>
         <Footer />
       </footer>*/}
-      <DoctorPage />
+      <div className='container'>
+        <Routes>
+          <Route path="/commit" element={<File />} />
+          <Route path="/" element={<DoctorPage />} />
+        </Routes>
+      </div>
     </div>
   );
 }
