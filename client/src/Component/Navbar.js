@@ -6,7 +6,7 @@ export const Navbar = () => {
   return (
     <div className='flex flex-row items-center justify-between bg-[#9BE8D8] p-4'>
       <div className='flex items-center'>
-        <img src="./pics/logo.svg" alt="" />
+        <img src="/res/logo.svg" alt="" />
         <a href="" className="ml-4 text-black text-base font-medium font-['Poppins'] hover:text-sky-500">Home</a>
         <a href="" className="ml-4 text-black text-base font-medium font-['Poppins']  hover:text-sky-500">Products</a>
         <a href="" className="ml-4 text-black text-base font-medium font-['Poppins']  hover:text-sky-500">About</a>

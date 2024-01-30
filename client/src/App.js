@@ -9,25 +9,48 @@ import { Footer } from './Component/Footer';
 import File from './File';
 import { Routes, Route } from 'react-router-dom';
 import { About } from './Component/About';
-import { Clock } from './Component/Clock';
+import { useState, useEffect } from 'react';
+import AOS from "aos";
+import "aos/dist/aos.css"
 
 function App() {
+  const [accuracy, setAccuracy] = useState(2);
+
+  useEffect(() => {
+    AOS.init({
+      offset: 200,
+      duration: 600,
+      easing: 'ease-in-sine',
+      delay: 100,
+
+    });
+  })
+
+  useEffect(() => {
+    fetch("/api/ml")
+      .then((res) => res.json())
+      .then((data) => setAccuracy(data.accuracy))
+      .catch((error) => console.error("Error fetching data:", error));
+  }, []);
   return (
     <div className="w-[1728px] relative bg-sky-500 items-center">
-      {/*<p> Ayurmed</p>
+      <p> Ayurmed</p>
       <Navbar />
-      <Hero />
+      <div data-aos="fade-up-right">
+        <Hero />
+      </div>
       <Ask />
-      <Testimonials />
+      <div data-aos="fade-right"><Testimonials /></div>
       <footer>
         <Footer />
-      </footer>*/}
+      </footer>
+      <div>Output: {accuracy}</div>
       <div className='container'>
         <Routes>
           <Route path="/commit" element={<File />} />
-          <Route path="/" element={<DoctorPage />} />
+          <Route path="/hhh" element={<DoctorPage />} />
           <Route path="/about" element={<About />} />
-          <Route path="/clock" element={<Clock />} />
+
         </Routes>
       </div>
     </div>
