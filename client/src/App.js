@@ -12,6 +12,7 @@ import { About } from './Component/About';
 import { useState, useEffect } from 'react';
 import AOS from "aos";
 import "aos/dist/aos.css"
+import { HomePage } from './Component/HomePage';
 
 function App() {
   const [accuracy, setAccuracy] = useState(2);
@@ -33,27 +34,18 @@ function App() {
       .catch((error) => console.error("Error fetching data:", error));
   }, []);
   return (
-    <div className="w-[1728px] relative bg-sky-500 items-center">
-      <p> Ayurmed</p>
-      <Navbar />
-      <div data-aos="fade-up-right">
-        <Hero />
-      </div>
-      <Ask />
-      <div data-aos="fade-right"><Testimonials /></div>
-      <footer>
-        <Footer />
-      </footer>
-      <div>Output: {accuracy}</div>
-      <div className='container'>
-        <Routes>
-          <Route path="/commit" element={<File />} />
-          <Route path="/hhh" element={<DoctorPage />} />
-          <Route path="/about" element={<About />} />
 
-        </Routes>
-      </div>
+
+    <div className='container'>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/commit" element={<File />} />
+        <Route path="/doctor" element={<DoctorPage />} />
+        <Route path="/about" element={<About />} />
+
+      </Routes>
     </div>
+
   );
 }
 

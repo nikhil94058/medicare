@@ -1,6 +1,7 @@
 import React from 'react'
-import { useAuth0 } from "@auth0/auth0-react";
+import { User, useAuth0 } from "@auth0/auth0-react";
 import { Login } from './Login';
+
 export const Navbar = () => {
 
   return (
@@ -15,10 +16,10 @@ export const Navbar = () => {
       <div className="flex items-center">
         <div className="text-black text-[8.15px] font-normal font-['Lato'] ml-4">Eng</div>
         <div className="w-[336px] h-11 ml-4 bg-lime-100 flex items-center gap-3">
-          <input type="text" placeholder='Search For anything' />
+          <input type="text" placeholder='Search For anything' className='bg-[#E2F6CA]' />
         </div>
         <img src="" alt="" className="ml-4" />
-        <div className="text-black text-xs font-normal font-['Inter'] ml-2">Rohit Shetty</div>
+        <div className="text-black text-xs font-normal font-['Inter'] ml-2">{User.name}</div>
       </div>
       <Login />
     </div>

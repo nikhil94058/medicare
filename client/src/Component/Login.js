@@ -17,8 +17,9 @@ export const Login = () => {
         (<div className='bg-white'><button onClick={() => logout({ logoutParams: { returnTo: window.location.origin } })}>
           Log Out
         </button>
-          <img src={user.picture} alt={user.name} />
-          <h2>{user.name}</h2>
+          <div className="w-[100px] h-[100px] bg-zinc-300 rounded-full"><img src={user.picture} alt={user.name} /></div>
+
+          <div className="text-black text-xs font-normal font-['Inter'] ml-2">{user.name}</div>
         </div>)}
 
       <ToastContainer />
