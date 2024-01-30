@@ -19,7 +19,7 @@ export const Navbar = () => {
           <input type="text" placeholder='Search For anything' className='bg-[#E2F6CA]' />
         </div>
         <img src="" alt="" className="ml-4" />
-        <div className="text-black text-xs font-normal font-['Inter'] ml-2">{User.name}</div>
+
       </div>
       <Login />
     </div>

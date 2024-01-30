@@ -12,14 +12,15 @@ export const Login = () => {
     <div>
       {!isAuthenticated ? (
         <div>
-          <div className='bg-white'><button onClick={() => { loginWithRedirect(); notify(); }}>Log In</button></div>
+          <div className='bg-[#9BE8D8] text-orange-400'><button onClick={() => { loginWithRedirect(); notify(); }}>Log In</button></div>
         </div>) :
-        (<div className='bg-white'><button onClick={() => logout({ logoutParams: { returnTo: window.location.origin } })}>
-          Log Out
-        </button>
-          <div className="w-[100px] h-[100px] bg-zinc-300 rounded-full"><img src={user.picture} alt={user.name} /></div>
+        (<div className='bg-[#9BE8D8] '>
+          <img src={user.picture} alt={user.name} className='w-[50px] h-[50px] bg-zinc-300 rounded-full' />
 
-          <div className="text-black text-xs font-normal font-['Inter'] ml-2">{user.name}</div>
+          <div className="text-black text-xs font-normal font-['Inter']">{user.name}</div>
+          <button onClick={() => logout({ logoutParams: { returnTo: window.location.origin } })}>
+            Log Out
+          </button>
         </div>)}
 
       <ToastContainer />
