@@ -5,7 +5,7 @@ import { Footer } from './Footer';
 export const About = () => {
   return (
     <div className="min-h-screen bg-cover bg-center" style={{
-      backgroundImage: "url(/pics/about.svg)", backgroundSize: "cover",
+      backgroundImage: "url(/res/about.svg)", backgroundSize: "cover",
       backgroundPosition: "center"
     }}>
       <Navbar />

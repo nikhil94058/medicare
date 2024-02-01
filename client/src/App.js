@@ -1,11 +1,7 @@
-import logo from './logo.svg';
-import './App.css';
-import { Navbar } from './Component/Navbar';
-import { Hero } from './Component/Hero';
-import Ask from './Component/Ask';
-import { Testimonials } from './Component/Testimonials';
+
+
 import { DoctorPage } from './Component/DoctorPage';
-import { Footer } from './Component/Footer';
+
 import File from './File';
 import { Routes, Route } from 'react-router-dom';
 import { About } from './Component/About';
@@ -41,10 +37,11 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/commit" element={<File />} />
         <Route path="/doctor" element={<DoctorPage />} />
-        <Route path="/about" element={<About />} />
 
+        <Route path="/about" element={<About />} />
       </Routes>
     </div>
+
 
   );
 }
