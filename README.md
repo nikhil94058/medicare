@@ -1,4 +1,4 @@
-# Sample Hardhat Project
+# A project based on the UN Sustainable goal for Good Health and Wellbeing, utilizing Web3 and ML technologies.
 
 This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, and a script that deploys that contract.
 
