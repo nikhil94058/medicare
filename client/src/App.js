@@ -2,13 +2,14 @@
 
 import { DoctorPage } from './Component/DoctorPage';
 
-import File from './File';
+//import File from './File';
 import { Routes, Route } from 'react-router-dom';
 import { About } from './Component/About';
 import { useState, useEffect } from 'react';
 import AOS from "aos";
 import "aos/dist/aos.css"
 import { HomePage } from './Component/HomePage';
+import LoginPageP from './Component/LoginPageP';
 
 function App() {
   const [accuracy, setAccuracy] = useState(2);
@@ -35,8 +36,9 @@ function App() {
     <div className='container'>
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/commit" element={<File />} />
+        {/*<Route path="/commit" element={<File />} />*/}
         <Route path="/doctor" element={<DoctorPage />} />
+        <Route path="/login" element={<LoginPageP />} />
 
         <Route path="/about" element={<About />} />
       </Routes>
